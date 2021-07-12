@@ -1,0 +1,126 @@
+
+<!--serach Bar -->
+
+<input type="text" name="movieTitle" placeholder="Search by Brand" class="form-control mt-5" [(ngModel)]="searchTerm">
+
+<!--<div class="container" >
+    <div class=" row m-2 mt-5 mb-5 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4" >
+        <div class="col"  *ngFor="let itemObj of myData  | search:searchTerm">
+            <div class="card mt-4 mb-4 ">
+                <img height="300px" width="365px" src="{{itemObj.image}}" class="card-img-top" >
+                
+                 
+                <div class="card-body content" >
+                    <h6>{{itemObj.title}}</h6>
+             
+    
+                    <div class="btn-group border rounded">
+                      <button class="btn btn-sm border-end border-dark btn-outline-secondary " (click)="onSelectId(itemObj.id)" routerLink="viewmovies" routerLinkActive="active">view</button>
+                      <button class="btn btn-sm border-dark btn-outline-secondary " data-bs-target="#mdl" data-bs-toggle="modal" >Rate</button>
+
+                     </div>
+                    
+                </div>
+                
+              </div>
+              <div class="flap"></div>
+                
+         </div>-->
+
+
+
+
+        
+        
+        
+        
+
+
+
+        
+
+        
+
+        <!--modal for rating -->
+        <div class="modal fade" id="mdl" data-bs-backdrop="static"  >
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
+                
+                <div class="modal-content" >
+
+                    <div class="modal-header">
+                         Review
+                        <button class="btn btn-danger d-inline float-end" data-bs-dismiss="modal">X</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email </label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email id">
+                          </div>
+                          <div class="mb-3">
+                            <label  for="exampleFormControlTextarea1" class="form-label">Review</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success d-inline float-start " data-bs-dismiss="modal">Submit</button>
+                        <button class="btn btn-danger d-inline float-end" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div>
+      <div class="row m-2 mt-5 mb-5 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+        <div class="col-4" *ngFor="let itemObj of myData  | search:searchTerm">
+          
+          <div class="card mt-4 mb-4 ">
+
+            <h1 class="card-top text-center" style = ":hover{}" >{{itemObj.rank}}</h1>
+           
+            
+             
+            <div class="card-body content">
+                <h6>{{itemObj.title}}</h6>
+         
+
+                <div class="btn-group border rounded">
+                  <button class="btn btn-sm border-end border-dark btn-outline-secondary " (click)="onSelectId(itemObj.id)" routerLink="viewmovies" routerLinkActive="active">view</button>
+                  <button class="btn btn-sm border-dark btn-outline-secondary " data-bs-target="#mdl" data-bs-toggle="modal" >Rate</button>
+
+                 </div>
+                
+            </div>
+            
+          </div>
+      </div>
+        <hr>
+        <div class="col-8" *ngFor="let itemObj of myData  | search:searchTerm">
+         
+        </div>
+      </div>
+  </div>
+
+
+
+

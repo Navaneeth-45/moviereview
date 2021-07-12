@@ -1,0 +1,18 @@
+#b1:hover{
+    background-color: black;
+    color: blanchedalmond;
+
+}
+#b1{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#bckgrnd{
+    background-color: rgb(0,0,0,0.8);
+}
+
+@media screen and (max-width:550px){
+    #p1{
+        max-width:100%
+    }
+}

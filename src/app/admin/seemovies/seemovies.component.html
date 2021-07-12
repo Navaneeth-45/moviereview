@@ -1,0 +1,32 @@
+<div class="container p-5 ">
+<table class="table text-white ">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">rank</th>
+        <th scope="col">rankUpDown</th>
+        <th scope="col">title</th>
+        <th scope="col">year</th>
+        <th scope="col">imDbRating</th>
+        <th scope="col">imDbRatingCount</th>
+        <th scope="col">genre</th>
+        <th scope="col">image</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let items of myData">
+        <th scope="row">{{items.id}}</th>
+        <td>{{items.rank}}</td>
+        <td>{{items.rankUpDown}}</td>
+        <td>{{items.title}}</td>
+        <td>{{items.year}}</td>
+        <td>{{items.imDbRating}}</td>
+        <td>{{items.imDbRatingCount}}</td>
+        <td>{{items.genre}}</td>
+        <td><img src="{{items.image}}" width="100%"></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,196 @@
+
+<!--home page design 1-->
+<div  style="background-color: rgba(0, 0, 0, 0.8);">
+<!--title with buttons-->
+<div id="intro" class="bg-image shadow-2-strong text-white " >
+    <div class="mask mt-5 mb-5 " >
+      <div class="container d-flex align-items-center justify-content-center text-center h-100" >
+        <div class="text-white" >
+          <h1 class="mt-5 mb-3"> ---- WICKED MOVIES ---- </h1>
+          <h5 class="mb-4">Unlimited Movies, TV shows and more</h5>
+          <a class="btn btn-outline-light btn-lg m-2 bg-primary" href="https://www.youtube.com/results?search_query=sachin+tendulkar" role="button"
+            rel="nofollow" target="_blank">Start tutorial</a>
+          <a class="btn btn-outline-light btn-lg m-2 bg-primary" href="https://play.google.com/store" target="_blank"
+            role="button">Download our App</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <hr class="my-5 text-white">
+
+
+
+
+  <!--middle part-->  
+      <div class="row">
+        <div class="col-md-6 gx-5 mb-4">
+          <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+            <img src="../../assets/image 2.jpg" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 gx-5 mb-4 text-white ">
+          <h4 class="text-white mt-4"><strong>Enjoy on your TV.</strong></h4>
+          <h6 class="text-white ">
+            Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+            </h6>
+
+          
+          <h4 class="text-white mt-4"><strong>Download your shows to watch offline.</strong></h4>
+          <h6 class="text-white ">
+            Save your favourites easily and always have something to watch.
+          </h6>
+
+          <h4 class="text-white mt-4"><strong>Watch everywhere.</strong></h4>
+          <p class="text-white ">
+            Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
+
+          </p>
+        </div>
+    
+   
+
+    <hr class="my-5 text-white" />
+
+
+    <!--upcoming movies cards-->
+
+    <section class="text-center ">
+      <h4 id="up1" class="mb-5 text-white"><strong class="text-white">Upcoming Movies</strong></h4>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://images.indianexpress.com/2021/05/venom-2-1200.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Venom 2</h5>
+              <p class="card-text">
+                It is an upcoming American superhero film featuring the Marvel Comics character Venom, produced by Columbia Pictures in association with Marvel and Tencent Pictures.
+              </p>
+              <a href="https://www.youtube.com/watch?v=-ezfi6FQ8Ds" class="btn btn-primary">Watch Trailer</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card ">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://lumiere-a.akamaihd.net/v1/images/image_8ba842c6.png" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Black Widow</h5>
+              <p class="card-text ">
+               It is an upcoming American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Walt Disney Studios.
+              </p>
+              <a href="https://www.youtube.com/watch?v=ybji16u608U" class="btn btn-primary">View Trailer</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://i.ytimg.com/vi/0WVDKZJkGlY/maxresdefault.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Eternals</h5>
+              <p class="card-text">
+               It is an upcoming American superhero film based on the Marvel Comics race of the same name. Produced by Marvel Studios and distributed by Walt Disney Studios.
+              </p>
+              <a href="https://www.youtube.com/watch?v=0WVDKZJkGlY" class="btn btn-primary">View Trailer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+
+    <hr class="my-5 text-white" />
+
+   <!--sign-up form-->
+    <section class="mb-5">
+      <h4 class="mb-5 text-center text-white"><strong>Sign Up</strong></h4>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 text-white">
+          <form #ref="ngForm" (ngSubmit)="onSignup(ref.value)" >
+           
+            <div class="row mb-4 ">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form3Example1" class="form-control" name="username" ngModel/>
+                  <label class="form-label" for="form3Example1">user name</label>
+                </div>
+              </div>
+             
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form3Example3" class="form-control" name="email" ngModel />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form3Example4" class="form-control" name="password"  ngModel />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" name="Checkbox" id="form2Example3" checked  ngModel/>
+              <label class="form-check-label" for="form2Example3">
+                Subscribe to our newsletter
+              </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              Sign up
+            </button>
+            </form>
+          </div>
+        </div>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>or sign up with:</p>
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
+            </div>
+
+    </section>
+  </div>
+</div>
+
+
+

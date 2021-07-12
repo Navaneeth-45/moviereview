@@ -1,0 +1,135 @@
+
+<!--serach Bar -->
+
+<input type="text" name="movieTitle" placeholder="Search by Keyword" class="form-control mt-5" [(ngModel)]="searchTerm">
+
+<!--carousel-->
+
+<div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-indicators ">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://m.media-amazon.com/images/G/01/digital/video/sonata/PV_IN_Asuran/9c8d8ed2-fe99-4c82-bee2-bd1c29565c11._UR3000,600_SX3000_FMwebp_.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_WonderWomen84Launch/2a4fd577-c5a6-483c-a910-23afbc2ba9f7._UR3000,600_SX3000_FMwebp_.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SuperGirlLaunch/e3069c19-bcf4-4c1e-9adb-859b44740dff._UR3000,600_SX3000_FMwebp_.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_SolosLaunch/bd7c0f2f-c504-4d22-9d71-33e951bb2be5._UR3000,600_SX3000_FMwebp_.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_PanicS1Launch/c460f962-b788-44dc-ac60-7daef9f2b45b._UR3000,600_SX3000_FMwebp_.jpeg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+
+
+<!--contents shown in cards-->
+
+<div class="container" >
+    <div class=" row m-2 mt-5 mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" >
+        <div class="col" *ngFor="let itemObj of myData | search:searchTerm | paginate:{itemsPerPage: 16, currentPage: p} ">
+            <div class="card mt-4 mb-4">
+                <img height="300px" width="365px" src="{{itemObj.image}}" class="card-img-top" >
+                 
+                <div class="card-body" >
+                    <h6>{{itemObj.title}}</h6>
+                    <div class="btn-group border rounded">
+                      <button class="btn btn-sm border-end border-light btn-outline-info btn-dark text-white" (click)="onSelectId(itemObj.id)" routerLink="viewmovies" routerLinkActive="active">view</button>
+                      <button class="btn btn-sm  border-light btn-outline-info btn-dark text-white " data-bs-target="#mdl" data-bs-toggle="modal" >Rate</button>
+                     </div>
+                    
+                </div>
+                
+              </div>
+        </div>
+
+
+
+    <!--<div id="backgrnd">
+
+      <div class=" row m-2 mt-5 mb-5 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3" >
+        <div class="col" *ngFor="let itemObj of myData | search:searchTerm | paginate:{itemsPerPage: 16, currentPage: p} ">
+        <div class="cards mt-4 mb-4">
+            <div class="card">
+              <img src="{{itemObj.image}}" class="card__image" alt="" height="300px" width="100%" >
+              <div class="card__overlay">
+                <div class=" card__description btn-group border rounded">
+                  <h3 class="card__title text-center m-3">{{itemObj.title}}</h3>
+                  <button class="btn btn-sm border-end border-dark btn-outline-secondary " (click)="onSelectId(itemObj.id)" routerLink="viewmovies" routerLinkActive="active">view</button>
+                  <button class="btn btn-sm border-dark btn-outline-secondary " data-bs-target="#mdl" data-bs-toggle="modal" >Rate</button>
+
+                 </div>
+              </div>
+            </div>      
+        </div>
+        </div>-->
+
+
+        <!--modal for rating -->
+        <div class="modal fade" id="mdl" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
+                
+                <div class="modal-content" style="background-image: url('assets/image 8.jpeg');" >
+
+                    <div class="modal-header text-white">
+                         Review
+                        <button class="btn btn-danger d-inline float-end" data-bs-dismiss="modal">X</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label text-white">Email </label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email id">
+                          </div>
+                          <div class="mb-3">
+                            <label  for="exampleFormControlTextarea1" class="form-label text-white">Review</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+
+                          <!--rating -->
+                        <div>
+                          <label for="exampleFormControlTextarea2" class="form-label d-block">Rate : </label>
+                          <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+                          
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success d-inline float-start " data-bs-dismiss="modal">Submit</button>
+                        <button class="btn btn-danger d-inline float-end" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+
+
+
+     </div> 
+
+
+<!--Pagination-->
+<div class="text-center text-white " style="background-color: rgba(0, 0, 0, 0.8); padding-top: 50px; padding-bottom: 50px;">
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+</div>
