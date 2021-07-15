@@ -81,7 +81,6 @@ userApi.post("/movierating",errorhandler(async(req,res)=>{
 userApi.get("/ratings",errorhandler(async(req,res)=>{
     let ratingcollectionobj = req.app.get("ratingcollection")
     let ratinglist= await ratingcollectionobj.find().toArray()
-    console.log(ratinglist)
     
     res.send({message:ratinglist})
     
