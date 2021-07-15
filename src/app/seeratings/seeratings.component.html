@@ -1,0 +1,18 @@
+<div class="container p-5 ">
+    <table class="table text-white ">
+        <thead>
+          <tr>
+            <th scope="col">username</th>
+            <th scope="col">rating</th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr *ngFor="let ratings of ratinglist">
+            <th scope="row">{{ratings.username}}</th>
+            <td>{{ratings.rating}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>

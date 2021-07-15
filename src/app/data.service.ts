@@ -44,6 +44,18 @@ export class DataService {
    
   }
 
+  rating(value):Observable<any>{
+    return this.hc.post("/user/movierating",value)
+  }
+
+  getratings():Observable<any>{
+    return this.hc.get("/user/ratings")
+  }
+
+  contactus(value):Observable<any>{
+    return this.hc.post("/user/contactform" ,value)
+  }
+
   
   
 }

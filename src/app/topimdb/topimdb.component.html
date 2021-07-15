@@ -42,7 +42,7 @@
         
 
         <!--modal for rating -->
-        <div class="modal fade" id="mdl" data-bs-backdrop="static"  >
+        <!-- <div class="modal fade" id="mdl" data-bs-backdrop="static"  >
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
                 
                 <div class="modal-content" >
@@ -70,7 +70,7 @@
                  
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -96,7 +96,7 @@
           
           <div class="card mt-4 mb-4 ">
 
-            <h1 class="card-top text-center" style = ":hover{}" >{{itemObj.rank}}</h1>
+            <h1 class="card-top text-center" >{{itemObj.rank}}</h1>
            
             
              
@@ -106,7 +106,6 @@
 
                 <div class="btn-group border rounded">
                   <button class="btn btn-sm border-end border-dark btn-outline-secondary " (click)="onSelectId(itemObj.id)" routerLink="viewmovies" routerLinkActive="active">view</button>
-                  <button class="btn btn-sm border-dark btn-outline-secondary " data-bs-target="#mdl" data-bs-toggle="modal" >Rate</button>
 
                  </div>
                 

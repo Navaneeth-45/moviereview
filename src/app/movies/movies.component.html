@@ -98,27 +98,28 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label text-white">Email </label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email id">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email id" name="email" >
                           </div>
                           <div class="mb-3">
                             <label  for="exampleFormControlTextarea1" class="form-label text-white">Review</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="textarea" ></textarea>
                           </div>
 
                           <!--rating -->
                         <div>
                           <label for="exampleFormControlTextarea2" class="form-label d-block">Rate : </label>
-                          <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+                          <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false" name="rating" ></ngb-rating>
                           
                         </div>
+                      
 
                     </div>
+
                     <div class="modal-footer">
                         <button class="btn btn-success d-inline float-start " data-bs-dismiss="modal">Submit</button>
                         <button class="btn btn-danger d-inline float-end" data-bs-dismiss="modal">Close</button>
                     </div>
                     
-                 
                 </div>
             </div>
         </div>

@@ -17,6 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { RateusComponent } from './rateus/rateus.component';
+import { SeeratingsComponent } from './seeratings/seeratings.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     FooterComponent,
     AboutusComponent,
     LoginComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    RateusComponent,
+    SeeratingsComponent
   ],
   imports: [
     BrowserModule,

@@ -12,39 +12,36 @@ Thank you for your interest in our services. Please provide the following inform
     <h2 class="text-center mt-5">Contact Us</h2>
     <div class="col-sm-2 col-md-3"></div>
     <div class="col-sm-8 col-md-6">
-        <form >
+        <form #ref="ngForm" (ngSubmit)="contactform(ref.value); " >
             <div class="mb-3">
-                <label for="fn" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="fn" name="firstname" >
+                <label for="fn" class="form-label">username</label>
+                <input type="text" class="form-control" id="fn" name="username" ngModel >
             </div>
-            <div class="mb-3">
-                <label for="ln" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="ln"  name="lastname">
-            </div>
+            
 
             <div class="mb-3">
                 <label for="em" class="form-label">Email</label>
-                <input type="email" class="form-control" id="em" name="email">
+                <input type="email" class="form-control" id="em" name="email" ngModel>
             </div>
 
             <div class="mb-3">
                 <label for="ques" class="form-label">Questions</label>
-                <input type="text" class="form-control" id="ques"  name="questions">
+                <input type="text" class="form-control" id="ques"  name="questions" ngModel>
             </div>
 
             <div class="mb-3">
                 <label for="comp" class="form-label">Complaints</label>
-                <input type="text" class="form-control" id="comp"  name="complaints">
+                <input type="text" class="form-control" id="comp"  name="complaints" ngModel>
             </div>
 
 
             <div class="form-check mt-5">
-                <input type="checkbox" name="polocies" class="form-check-input" id="check">
+                <input type="checkbox" name="polocies" class="form-check-input" id="check" ngModel>
                 <label for="check" class="form-check-label">I confirm, I have read and agreeto the company's private policy and consent to sharing my information</label>
             </div>
 
             <div class="form-check mt-3">
-                <input type="checkbox" name="notifications" class="form-check-input" id="nots">
+                <input type="checkbox" name="notifications" class="form-check-input" id="nots" ngModel>
                 <label for="nots" class="form-check-label">I Would like to recieve alerts and Updates from the Company</label>
             </div>
 
@@ -57,20 +54,3 @@ Thank you for your interest in our services. Please provide the following inform
     <div class="col-sm-2 col-md-3"></div>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <i class="fab fa-twitter "></i>
-        <h1 class="m-5">Tweet us</h1>
-      </div>
-      <div class="col">
-        <i class="far fa-envelope "></i>
-        <h1 class="m-5">Email us</h1>
-      </div>
-      <div class="col">
-        <i class="fas fa-mobile-alt"></i>
-        <h1 class="m-5">Text us</h1>
-      </div>
-    </div>
-  </div>
-</div>

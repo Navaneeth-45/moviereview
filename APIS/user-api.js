@@ -4,6 +4,7 @@ const userApi=exp.Router();
 const errorhandler= require("express-async-handler")
 const bcryptjs=require("bcryptjs")
 const jwt =require("jsonwebtoken")
+require("dotenv").config()
 
 //body parser middleware
 userApi.use(exp.json())
@@ -62,6 +63,29 @@ userApi.post("/createuser",errorhandler(async(req,res)=>{
 }))
 
 
+//taking rating from user
+userApi.post("/movierating",errorhandler(async(req,res)=>{
+    let ratingcollectionobj = req.app.get("ratingcollection")
+    rating=req.body;
+    let user= await ratingcollectionobj.findOne({username:rating.username})
+    if(user===null){
+        //insert
+       await ratingcollectionobj.insertOne(rating)
+        res.send({message:"rating is successfull"})
+    }
+    else{
+        res.send({message:"user already gave rating"})
+    }
+}))
+
+userApi.get("/ratings",errorhandler(async(req,res)=>{
+    let ratingcollectionobj = req.app.get("ratingcollection")
+    let ratinglist= await ratingcollectionobj.find().toArray()
+    console.log(ratinglist)
+    
+    res.send({message:ratinglist})
+    
+}))
 
 
 
@@ -71,7 +95,7 @@ userApi.post("/login",errorhandler(async(req,res)=>{
     let credentials=req.body;
     let user = await userCollectionObj.findOne({username:credentials.username})
     if(user===null){
-        res.send({message:"user not found"})
+        res.send({message:"please Register to Login"})
     }
     else{
        let result=await bcryptjs.compare(credentials.password,user.password)
@@ -80,11 +104,19 @@ userApi.post("/login",errorhandler(async(req,res)=>{
        }
        else{
            //create a token 
-           let signedtoken=jwt.sign({username:credentials.username},"abcdef",{expiresIn:120})
+           let signedtoken=jwt.sign({username:credentials.username},process.env.secret,{expiresIn:120})
            //send token to client
            res.send({message:'login success',token:signedtoken,username:credentials.username,userObj: user})
        }
     }
+}))
+
+userApi.post("/contactform", errorhandler(async(req,res)=>{
+    let contactscollection = req.app.get("contactscollection")
+    query=req.body;
+    await contactscollection.insertOne(query)
+    res.send({message:"your query successfully submitted"})
+
 }))
 
 module.exports=userApi

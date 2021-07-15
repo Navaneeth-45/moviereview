@@ -1,6 +1,7 @@
 const exp = require("express")
 const app = exp();
 const path = require("path")
+require("dotenv").config()
 
 //connect angular app with express server
 app.use(exp.static(path.join(__dirname, './dist/frontendproject1/')))
@@ -14,7 +15,7 @@ const mc = require("mongodb").MongoClient;
 
 
 //connection string
-const databaseUrl ="mongodb+srv://siddhu:siddhu@backend.tsjcp.mongodb.net/backend?retryWrites=true&w=majority"
+const databaseUrl =process.env.database_url
 
 //const databaseUrl="mongodb://<username>:<password>@cluster0-shard-00-00.rjvoz.mongodb.net:27017,cluster0-shard-00-01.rjvoz.mongodb.net:27017,cluster0-shard-00-02.rjvoz.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
 
@@ -32,10 +33,12 @@ mc.connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true }, (er
         //create usercollection object
 
         let userCollectionObj = databaseObj.collection("usercollection")
-        let adminCollection = databaseObj.collection("admincollection")
+        let ratingcollection = databaseObj.collection("ratingcollection")
+        let contactscollection= databaseObj.collection("contactscollection")
 
         app.set("userCollectionObj", userCollectionObj)
-        app.set("adminCollection", adminCollection)
+        app.set("ratingcollection", ratingcollection)
+        app.set("contactscollection", contactscollection)
 
         console.log("connected to database")
 
@@ -65,5 +68,5 @@ app.use((err, req, res, next) => {
 
 
 //assign port
-const port = 1000;
+const port = process.env.portnum;
 app.listen(port, () => console.log(`server on ${port}...`))
