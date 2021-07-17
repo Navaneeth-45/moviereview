@@ -103,7 +103,7 @@ userApi.post("/login",errorhandler(async(req,res)=>{
        }
        else{
            //create a token 
-           let signedtoken=jwt.sign({username:credentials.username},process.env.secret,{expiresIn:120})
+           let signedtoken=jwt.sign({username:credentials.username},'abcdef',{expiresIn:120})
            //send token to client
            res.send({message:'login success',token:signedtoken,username:credentials.username,userObj: user})
        }
